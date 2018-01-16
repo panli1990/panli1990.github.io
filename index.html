@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="en">
+<html class="theme-next pisces use-motion" lang="en">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -96,7 +96,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '6.0.1',
     sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
@@ -364,22 +364,24 @@
       
         
           
-            <h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h1><p> Sigmoid 和 Softmax 是在逻辑回归和神经网络中常用的两个函数，初学时经常会对二者的差异和应用场景产生疑惑。接下来，对两者进行简单的了解。</p>
-<p>#1. Sigmoid 函数形式为：</p>
+            <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p> Sigmoid 和 Softmax 是在逻辑回归和神经网络中常用的两个函数，初学时经常会对二者的差异和应用场景产生疑惑。接下来，对两者进行简单的了解。</p>
+<p>#Sigmoid 函数形式为</p>
 <p>　　$$h(x) = \frac{1}{1 + e^{-\theta^Tx}} \tag{1}$$</p>
 <p>Sigmoid 是一个可微的有界函数，在各点均有非负的导数。是当$x \rightarrow \infty $  时，$h(x) \rightarrow 1$；当 $x \rightarrow -\infty $ 时，$h(x) \rightarrow -1$。常用于二元分类（Binary Classification）问题，以及神经网络的激活函数（Activation Function）（把线性的输入转换为非线性的输出）。</p>
-<h1 id="2-Softmax-函数形式为："><a href="#2-Softmax-函数形式为：" class="headerlink" title="2. Softmax 函数形式为："></a>2. Softmax 函数形式为：</h1><p>　　$$h(z) = \frac{e^{z<em>j}}{\sum</em>{k=1}^K e^{z_k}}, j = 1, 2, …, K \tag{2}$$</p>
+<h1 id="Softmax-函数形式为"><a href="#Softmax-函数形式为" class="headerlink" title="Softmax 函数形式为"></a>Softmax 函数形式为</h1><p>　　$$h(z) = \frac{e^{z<em>j}}{\sum</em>{k=1}^K e^{z_k}}, j = 1, 2, …, K \tag{2}$$</p>
 <p>对于一个长度为 K 的任意实数矢量，Softmax 可以把它压缩为一个长度为 K 的、取值在$(0, 1)$ 区间的实数矢量，且矢量中各元素之和为 1。它在多元分类（Multiclass Classification）和神经网络中也有很多应用。Softmax 不用于普通的”max”函数，”max”函数只输出最大的那个值，而 Softmax 则确保较小的值也有较小的概率，不会被直接舍弃掉，是一个比较“Soft”的“max”。</p>
-<h1 id="3-在二元分类的情况下，"><a href="#3-在二元分类的情况下，" class="headerlink" title="3. 在二元分类的情况下，"></a>3. 在二元分类的情况下，</h1><p>对于 Sigmod，有：</p>
+<p>#在二元分类的情况下</p>
+<p>对于 Sigmod，有：</p>
 <p>$$p(y = 1 |x) = \frac{1}{1 + e^{-\theta^Tx}} \tag{3}$$</p>
 <p>$$p(y=0|x) = 1- p(y=1|x) = \frac{e^{-\theta^Tx}}{1 + e^{-\theta^Tx}} \tag{4} $$</p>
-<h1 id="4-对-Softmax-，"><a href="#4-对-Softmax-，" class="headerlink" title="4. 对  Softmax ，"></a>4. 对  Softmax ，</h1><p>当<img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-fb68d5e40c0ecf2be9e2710095e37f06_l3.svg" alt="K = 2"> ，有：</p>
+<h1 id="对于Softmax"><a href="#对于Softmax" class="headerlink" title="对于Softmax"></a>对于Softmax</h1><p>当<img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-fb68d5e40c0ecf2be9e2710095e37f06_l3.svg" alt="K = 2"> ，有：</p>
 <p>$$p(y = 1 |x) = \frac{e^{\theta_1^T}x}{e^{\theta_0^T}x + e^{\theta_1^Tx}} = \frac{1}{1 + e^{(\theta_0^T - \theta_1^T)x}} \tag{5}$$</p>
 <p>$$p(y = 1 |x) = \frac{e^{\theta_0^T}x}{e^{\theta_0^T}x + e^{\theta_1^Tx}} = \frac{e^{(\theta_0 - \theta_1)^Tx}}{1 + e^{(\theta_0 - \theta_1)^Tx}} = \frac{e^{-\beta x}}{1 + e^{-\beta x}} \tag{6}$$</p>
 <p>其中</p>
 <p>$$\beta = -(\theta_0 -\theta_1) \tag{7}$$</p>
 <p>可见在二元分类的情况下，Softmax 退化为了 Sigmoid。</p>
-<h1 id="5-Hiahiahia…写在后面"><a href="#5-Hiahiahia…写在后面" class="headerlink" title="5. Hiahiahia…写在后面"></a>5. Hiahiahia…写在后面</h1><p>关于softmax函数的问题，沐神推荐了@<a href="https://github.com/pluskid" target="_blank" rel="noopener">pluskid</a>早年写的一篇<a href="http://freemind.pluskid.org/machine-learning/softmax-vs-softmax-loss-numerical-stability/" target="_blank" rel="noopener">blog解释这个问题</a>。</p>
+<p>#Hiahiahia…写在后面</p>
+<p>关于softmax函数的问题，沐神推荐了@<a href="https://github.com/pluskid" target="_blank" rel="noopener">pluskid</a>早年写的一篇<a href="http://freemind.pluskid.org/machine-learning/softmax-vs-softmax-loss-numerical-stability/" target="_blank" rel="noopener">blog解释这个问题</a>。</p>
 <p>Enjoy it!!</p>
 
           
@@ -871,7 +873,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.1</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.0.1</div>
 
 
 
@@ -954,6 +956,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.1"></script>
+
+
 
   
 
