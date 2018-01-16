@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title><![CDATA[安家啦！重启hexo的美丽征程~]]></title>
+      <url>/2018/01/16/%E5%AE%89%E5%AE%B6%E5%95%A6%EF%BC%81%E9%87%8D%E5%90%AFhexo%E7%9A%84%E7%BE%8E%E4%B8%BD%E5%BE%81%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0 写在前面"></a>0 写在前面</h3><p>大概是半年前，偶然看到一些hexo建立静态博客的帖子，被这种简洁美吸引，然后上手鼓捣了一阵，最后因为没有开启记录和写作的习惯，也就搁置了。</p>
+<p>时隔半年，再次想起来，已经忘了个大概。昨天又捣鼓了一遍，终于建了一个自己喜欢的家， 装修了自己喜欢的风格和元素，虽然大都是clone大神们创造的默认属性:smile:，但自己喜欢，这最重要！</p>
+<p>折腾这一遭，其实内心是希望自己接下来能勤快点，多写些东西。反观过去的近5年，经历了太多小波折，自己的心理和观念都发生了很多变化，不算是美好的，反倒觉得有点小shame。所以，希望2018年，这关键性的一年，能够创造些美好的事物，来让这些小shame变得暗淡、消匿。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 生活 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>/2018/01/15/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
