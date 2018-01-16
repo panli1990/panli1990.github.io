@@ -78,17 +78,17 @@
 
 
 
-<meta name="description" content="Get Your Hands Dirty!">
+<meta name="description" content="This is Lisa’s blog.  Stay Foolish, Stay Hungry. Life Finds a Way.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://panli1990.github.io/categories/index.html">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://panli1990.github.io/about/index.html">
 <meta property="og:site_name" content="Lisa&#39;s Blog">
-<meta property="og:description" content="Get Your Hands Dirty!">
+<meta property="og:description" content="This is Lisa’s blog.  Stay Foolish, Stay Hungry. Life Finds a Way.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-16T04:45:24.138Z">
+<meta property="og:updated_time" content="2018-01-16T06:23:07.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="Get Your Hands Dirty!">
+<meta name="twitter:title" content="about">
+<meta name="twitter:description" content="This is Lisa’s blog.  Stay Foolish, Stay Hungry. Life Finds a Way.">
 
 
 
@@ -116,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="https://panli1990.github.io/categories/"/>
+  <link rel="canonical" href="https://panli1990.github.io/about/"/>
 
 
 
@@ -364,22 +364,30 @@
       
         
           
-            <p>Sigmoid 和 Softmax 是在逻辑回归和神经网络中常用的两个函数，初学时经常会对二者的差异和应用场景产生疑惑。</p>
-<p>　　Sigmoid 函数形式为：</p>
-<p> (1)    <img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-2bc222a89d55041147f9f3c9a3e84368_l3.svg" alt="\begin{equation*} h(x) = \frac{1}{1 + e^{-\theta^Tx}} \end{equation*}"></p>
-<p>　　Sigmoid 是一个可微的有界函数，在各点均有非负的导数。是当 <img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-da5794e3ad846ee02bc37b3f05e2d927_l3.svg" alt="x \rightarrow \infty"> 时，<img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-71460fe190c92855cee6fce1ac891dc5_l3.svg" alt="h(x) \rightarrow 1">；当 <img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-8bb499f539417b819c5484e3a05a5236_l3.svg" alt="x \rightarrow -\infty"> 时，<img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-d33dd30d66a7b21e6be307054d3846cd_l3.svg" alt="h(x) \rightarrow -1">。常用于二元分类（Binary Classification）问题，以及神经网络的激活函数（Activation Function）（把线性的输入转换为非线性的输出）。</p>
-<p>　　Softmax 函数形式为：</p>
-<p> (2)    <img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-898147b3e191bf499805092f6628014b_l3.svg" alt="\begin{equation*} h(z) = \frac{e^{z_j}}{\sum_{k=1}^K e^{z_k}}, j = 1, 2, ..., K \end{equation*}"></p>
-<p>　　对于一个长度为 K 的任意实数矢量，Softmax 可以把它压缩为一个长度为 K 的、取值在 (0, 1) 区间的实数矢量，且矢量中各元素之和为 1。它在多元分类（Multiclass Classification）和神经网络中也有很多应用。Softmax 不用于普通的”max”函数，”max”函数只输出最大的那个值，而 Softmax 则确保较小的值也有较小的概率，不会被直接舍弃掉，是一个比较“Soft”的“max”。</p>
-<p>　　在二元分类的情况下，对于 Sigmod，有：</p>
-<p> (3)    <img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-9cf93362757d8e725752cc99a19c4a73_l3.svg" alt="\begin{equation*} p(y = 1 | x) = \frac{1}{1 + e^{-\theta^Tx}} \end{equation*}"></p>
-<p> (4)    <img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-6523f521416c94358998b9ba1b5ff5cd_l3.svg" alt="\begin{equation*} p(y = 0 | x) = 1 - p(y = 1 | x) = \frac{e^{-\theta^Tx}}{1 + e^{-\theta^Tx}} \end{equation*}"></p>
-<p>而对 <img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-fb68d5e40c0ecf2be9e2710095e37f06_l3.svg" alt="K = 2"> 的 Softmax ，有：</p>
-<p> (5)    <img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-932a8286e670b05cedf0ff391a780f0d_l3.svg" alt="\begin{equation*} p(y = 1|x) = \frac{e^{\theta_1^Tx}}{e^{\theta_0^Tx} + e^{\theta_1^Tx}} = \frac{1}{1 + e^{(\theta_0^T - \theta_1^T)x}} = \frac{1}{1 + e^{-\beta x}}  \end{equation*}"></p>
-<p> (6)    <img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-203875e757ce735af76ede364ed94be8_l3.svg" alt="\begin{equation*} p(y = 0|x) = \frac{e^{\theta_0^Tx}}{e^{\theta_0^Tx} + e^{\theta_1^Tx}} = \frac{e^{(\theta_0-\theta_1)^Tx}}{1 + e^{(\theta_0-\theta_1)^Tx}} = \frac{e^{-\beta x}}{1 + e^{-\beta x}} \end{equation*}"></p>
+            <h4 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h4><p> Sigmoid 和 Softmax 是在逻辑回归和神经网络中常用的两个函数，初学时经常会对二者的差异和应用场景产生疑惑。接下来，对两者进行简单的了解。</p>
+<ol>
+<li>Sigmoid 函数形式为：</li>
+</ol>
+<p>　　$h(x) = \frac{1}{1 + e^{-\theta^Tx}} \tag{1}$</p>
+<p>Sigmoid 是一个可微的有界函数，在各点均有非负的导数。是当$x \rightarrow \infty $  时，$h(x) \rightarrow 1$；当 $x \rightarrow -\infty $ 时，$h(x) \rightarrow -1$。常用于二元分类（Binary Classification）问题，以及神经网络的激活函数（Activation Function）（把线性的输入转换为非线性的输出）。</p>
+<p>　2. Softmax 函数形式为：</p>
+<p>　　$h(z) = \frac{e^{z<em>j}}{\sum</em>{k=1}^K e^{z_k}}, j = 1, 2, …, K \tag{2}$</p>
+<p>对于一个长度为 K 的任意实数矢量，Softmax 可以把它压缩为一个长度为 K 的、取值在$(0, 1)$ 区间的实数矢量，且矢量中各元素之和为 1。它在多元分类（Multiclass Classification）和神经网络中也有很多应用。Softmax 不用于普通的”max”函数，”max”函数只输出最大的那个值，而 Softmax 则确保较小的值也有较小的概率，不会被直接舍弃掉，是一个比较“Soft”的“max”。</p>
+<ol>
+<li><p>在二元分类的情况下，对于 Sigmod，有：</p>
+<p>$p(y = 1 |x) = \frac{1}{1 + e^{-\theta^Tx}} \tag{3}$</p>
+<p>$p(y=0|x) = 1- p(y=1|x) = \frac{e^{-\theta^Tx}}{1 + e^{-\theta^Tx}} \tag{4} $</p>
+</li>
+<li><p>对 <img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-fb68d5e40c0ecf2be9e2710095e37f06_l3.svg" alt="K = 2"> 的 Softmax ，有：</p>
+</li>
+</ol>
+<p>$p(y = 1 |x) = \frac{e^{\theta_1^T}x}{e^{\theta_0^T}x + e^{\theta_1^Tx}} = \frac{1}{1 + e^{(\theta_0^T - \theta_1^T)x}} \tag{5}$</p>
+<p>$p(y = 1 |x) = \frac{e^{\theta_0^T}x}{e^{\theta_0^T}x + e^{\theta_1^Tx}} = \frac{e^{(\theta_0 - \theta_1)^Tx}}{1 + e^{(\theta_0 - \theta_1)^Tx}} = \frac{e^{-\beta x}}{1 + e^{-\beta x}} \tag{6}$</p>
 <p>其中</p>
-<p> (7)    <img src="http://blog.nex3z.com/wp-content/ql-cache/quicklatex.com-e4d68e6b6ca70dc0d78066bb6cb0b35f_l3.svg" alt="\begin{equation*} \beta = -(\theta_0 - \theta_1) \end{equation*}"></p>
+<p>$\beta = -(\theta_0 -\theta_1) \tag{7}$</p>
 <p>可见在二元分类的情况下，Softmax 退化为了 Sigmoid。</p>
+<h4 id="Hiahiahia…写在后面"><a href="#Hiahiahia…写在后面" class="headerlink" title="Hiahiahia…写在后面"></a>Hiahiahia…写在后面</h4><p>关于softmax函数的问题，沐神推荐了@<a href="https://github.com/pluskid" target="_blank" rel="noopener">pluskid</a>早年写的一篇<a href="http://freemind.pluskid.org/machine-learning/softmax-vs-softmax-loss-numerical-stability/" target="_blank" rel="noopener">blog解释这个问题</a>。</p>
+<p>Enjoy it!!</p>
 
           
         
