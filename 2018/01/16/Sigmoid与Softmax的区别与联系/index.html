@@ -359,7 +359,8 @@
       
 
       
-        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p> Sigmoid 和 Softmax 是在逻辑回归和神经网络中常用的两个函数，初学时经常会对二者的差异和应用场景产生疑惑。接下来，对两者进行简单的了解。</p>
+        <figure class="highlight"><figcaption><span>lite</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p> Sigmoid 和 Softmax 是在逻辑回归和神经网络中常用的两个函数，初学时经常会对二者的差异和应用场景产生疑惑。接下来，对两者进行简单的了解。</p>
 <p>#Sigmoid 函数形式</p>
 <p>　　$$h(x) = \frac{1}{1 + e^{-\theta^Tx}} \tag{1}$$</p>
 <p>Sigmoid 是一个可微的有界函数，在各点均有非负的导数。是当$x \rightarrow \infty $  时，$h(x) \rightarrow 1$；当 $x \rightarrow -\infty $ 时，$h(x) \rightarrow -1$。常用于二元分类（Binary Classification）问题，以及神经网络的激活函数（Activation Function）（把线性的输入转换为非线性的输出）。</p>
